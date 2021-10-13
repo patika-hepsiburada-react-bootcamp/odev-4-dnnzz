@@ -26,10 +26,25 @@ body {
   width: 20vw;
 }
 
+.spinner {
+  margin-top: 12vh;
+}
+
 .dropdown select {
   height: 50px;
   position: relative;
   width: 100%;
+}
+
+.dropdown select {
+  color: whitesmoke;
+  font-size: 2rem;
+  text-align: center;
+  background: black;
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
 }
 
 .weather-card {

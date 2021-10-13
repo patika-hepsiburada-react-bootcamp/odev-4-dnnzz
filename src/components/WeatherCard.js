@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { GET_WEATHER } from "../query/query";
 import Dropdown from "./Dropdown";
 import WeatherCardInfo from "./WeatherCardInfo";
+import ReactLoading from "react-loading";
 
 export default function WeatherCard() {
   // state for current selected city
@@ -12,7 +13,7 @@ export default function WeatherCard() {
   const { loading, error, data } = useQuery(GET_WEATHER, { variables: { name: city } });
 
   if (loading) {
-    return <div>Loading..</div>;
+    return <ReactLoading type={"spinningBubbles"} height={200} width={200} className='spinner' />;
   }
   return error === true ? (
     <div>Error...</div>
