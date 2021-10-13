@@ -1,6 +1,8 @@
 import React from "react";
 import { cities } from "../data/cities";
 
+// Set city dropdown
+
 export default function Dropdown({ city, setCity }) {
   return (
     <div className='dropdown'>

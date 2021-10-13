@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_WEATHER } from "../query/query";
 import Dropdown from "./Dropdown";
+import WeatherCardInfo from "./WeatherCardInfo";
 
 export default function WeatherCard() {
-  const [city, setCity] = useState("elazig");
+  // state for current selected city
+  const [city, setCity] = useState("antalya");
+
+  // useQuery hook for fetching data from graphQl -> variable given by Dropdown component
   const { loading, error, data } = useQuery(GET_WEATHER, { variables: { name: city } });
 
   if (loading) {
@@ -15,7 +19,10 @@ export default function WeatherCard() {
   ) : (
     <div className='wrapper'>
       <Dropdown city={city} setCity={setCity} />
-      <div className='weather-card'>{console.log(loading, error, data)}</div>
+      <div className='weather-card'>
+        {console.log(data)}
+        <WeatherCardInfo weatherInfo={data} />
+      </div>
     </div>
   );
 }
