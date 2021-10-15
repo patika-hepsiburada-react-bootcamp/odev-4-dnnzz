@@ -21,7 +21,6 @@ export default function WeatherCard() {
     <div className='wrapper'>
       <Dropdown city={city} setCity={setCity} />
       <div className='weather-card'>
-        {console.log(data)}
         <WeatherCardInfo weatherInfo={data} />
       </div>
     </div>
